@@ -32,6 +32,11 @@
                 </li>
                 <li >
                     <a href="mylend.html" >
+                        我的图书
+                    </a>
+                </li>
+                <li >
+                    <a href="mylend.html" >
                         我的借还
                     </a>
                 </li>

@@ -38,6 +38,11 @@
                         个人信息
                     </a>
                 </li>
+                <li >
+                    <a href="mylend.html" >
+                        我的图书
+                    </a>
+                </li>
                 <li class="active">
                     <a href="mylend.html" >
                         我的借还
@@ -103,7 +108,7 @@
                     <td><c:out value="${alog.lendDate}"></c:out></td>
                     <td><c:out value="${alog.backDate}"></c:out></td>
                     <c:if test="${empty alog.backDate}">
-                        <td>未还</td>
+                        <td><a href="returnbook.html?bookId=<c:out value="${alog.bookId}"></c:out>"><button type="button" class="btn btn-primary btn-xs">归还</button></a></td>
                     </c:if>
                     <c:if test="${!empty alog.backDate}">
                         <td>已还</td>

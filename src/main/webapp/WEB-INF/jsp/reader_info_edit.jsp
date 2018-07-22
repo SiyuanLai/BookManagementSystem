@@ -36,6 +36,11 @@
                     </a>
                 </li>
                 <li >
+                    <a href="mylend.html" >
+                        我的图书
+                    </a>
+                </li>
+                <li >
                     <a href="reader_repasswd.html" >
                         密码修改
                     </a>

@@ -40,6 +40,11 @@
                 </li>
                 <li >
                     <a href="mylend.html" >
+                        我的图书
+                    </a>
+                </li>
+                <li >
+                    <a href="mylend.html" >
                         我的借还
                     </a>
                 </li>
@@ -117,7 +122,9 @@
                     <th>ISBN</th>
                     <th>价格</th>
                     <th>状态</th>
+                    <th>借阅</th>
                     <th>详情</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -134,12 +141,46 @@
                         <c:if test="${book.state==0}">
                             <td>借出</td>
                         </c:if>
+                        <c:if test="${book.state==1}">
+                            <td><button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal">
+                                借书
+                            </button></td>
+                        </c:if>
+                        <c:if test="${book.state==0}">
+                            <td>不可借</td>
+                        </c:if>
                         <td><a href="readerbookdetail.html?bookId=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-success btn-xs">详情</button></a></td>
                     </tr>
+                    <!-- 模态框（Modal） -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        &times;
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel">
+                                        提示
+                                    </h4>
+                                </div>
+                                <div class="modal-body">
+                                    借阅《${book.name}》？
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                    </button>
+                                    <a  href = "lendbookuser.html?id=${book.bookId}"><button type="button" class="btn btn-primary">
+                                        确定
+                                    </button></a>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal -->
+                    </div>
                 </c:forEach>
                 </tbody>
             </table>
         </div>
+
     </div>
 </c:if>
 
