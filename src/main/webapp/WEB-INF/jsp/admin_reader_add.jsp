@@ -81,7 +81,7 @@
             <form action="reader_add_do.html" method="post" id="readeredit" >
                 <div class="input-group">
                     <span  class="input-group-addon">读者证号</span>
-                    <input  type="text" class="form-control" name="readerId" id="readerId" ">
+                    <input  type="text" class="form-control" name="readerId" id="readerId">
                 </div>
 
                 <div class="input-group">
@@ -104,6 +104,12 @@
                     <span class="input-group-addon">电话</span>
                     <input type="text" class="form-control" name="telcode" id="telcode"  >
                 </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon">借阅上限</span>
+                    <input type="number" class="form-control" name="maxBook" id="maxBook" min="1" max="20"  >
+                </div>
+
                 <input type="submit" value="添加" class="btn btn-success btn-sm" class="text-left">
                 <script>
                     function mySubmit(flag){
